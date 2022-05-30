@@ -1,8 +1,8 @@
 ## API
 
 ## Prerequisites
-Node version 10.22.1
-NestJS CLI version 8.2.4
+Node version 10.22.x
+NestJS CLI version 8.2.x
 
 ## To Install
 npm install

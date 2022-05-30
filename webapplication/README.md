@@ -1,8 +1,8 @@
 # WebApplication
 
 ## Prerequisite
-Angular CLI version 10.2.4.
-Node version 10.22.1
+Angular CLI version 10.2.x
+Node version 10.22.x
 
 ## To Install
 npm install
