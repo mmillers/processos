@@ -1,0 +1,53 @@
+<app-notification *ngIf="(modalsSubjectService.showNotification$ | async)"></app-notification>
+<div class="container">
+	<form [formGroup]="form">
+		<div class="field">
+			<label class="label">Número</label>
+			<div class="control">
+				<input class="input" type="number" placeholder="Número do processo" formControlName="lawsuitNumber"
+					[ngClass]="{'is-danger': form.controls.lawsuitNumber.errors && form.controls.lawsuitNumber.dirty}">
+			</div>
+			<div *ngIf="form.controls.lawsuitNumber.dirty">
+				<p class="help is-danger"
+					*ngIf="form.controls.lawsuitNumber.getError('min') || form.controls.lawsuitNumber.getError('max')">
+					Somente números entre 1 e 9999
+				</p>
+				<p class="help is-danger" *ngIf="form.controls.lawsuitNumber.getError('required')">
+					Campo Obrigatório
+				</p>
+			</div>
+		</div>
+		<div class="field">
+			<div class="control">
+				<label class="label">Réu</label>
+				<div class="control">
+					<input class="input" checkInputDefendant placeholder="Nome do réu" formControlName="defendant"
+						[ngClass]="{'is-danger': form.controls.defendant.errors && form.controls.defendant.dirty}">
+				</div>
+				<div *ngIf="form.controls.defendant.dirty">
+					<p class="help is-danger" *ngIf="form.controls.defendant.getError('minlength')">
+						Mínimo 3 caracteres e máximo de 100
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="field is-grouped">
+			<div class="control">
+				<button class="button is-success" (click)="save()" [disabled]="!form.valid">
+					<span class="icon is-small">
+						<i class="fas fa-check"></i>
+					</span>
+					<span>Salvar</span>
+				</button>
+			</div>
+			<div class="control">
+				<button class="button is-danger is-light" (click)="cancel()">
+					<span>Cancelar</span>
+					<span class="icon is-small">
+						<i class="fas fa-times"></i>
+					</span>
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

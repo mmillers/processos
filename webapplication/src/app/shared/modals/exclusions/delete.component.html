@@ -1,0 +1,17 @@
+<div class="modal is-active">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head custom-head-modal">
+			<p class="modal-card-title">Confirmar Exclusão</p>
+			<button class="delete" aria-label="close" (click)="close()"></button>
+		</header>
+
+		<section class="modal-card-body">
+			<span>Deseja deletar o processo de número {{lawsuitSelected.lawsuitNumber}}?</span>
+		</section>
+		<footer class="modal-card-foot custom-footer-modal">
+			<button class="button is-danger" (click)="confirmar()">Confirmar</button>
+			<button class="button is-success" (click)="close()">Cancelar</button>
+		</footer>
+	</div>
+</div>

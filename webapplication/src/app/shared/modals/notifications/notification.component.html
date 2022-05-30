@@ -1,0 +1,4 @@
+<div class="notification is-light" [ngClass]="(modalsSubjectService.notification$ | async).class">
+	<button class="delete" (click)="close()"></button>
+	<p> {{ (modalsSubjectService.notification$ | async).message }}</p>
+</div>

@@ -1,0 +1,45 @@
+<div class="modal is-active">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<header class="modal-card-head custom-head-modal">
+			<p class="modal-card-title">Adicionar réu ao processo {{lawsuitSelected.lawsuitNumber}} </p>
+			<button class="delete" aria-label="close" (click)="close()"></button>
+		</header>
+		<section class="modal-card-body">
+			<div class="container">
+				<form [formGroup]="form">
+					<div class="field">
+						<label class="label">Nome</label>
+						<div class="control">
+							<input class="input" placeholder="Nome do réu" formControlName="defendant"
+								[ngClass]="{'is-danger': form.controls.defendant.errors && form.controls.defendant.dirty}">
+						</div>
+						<div *ngIf="form.controls.defendant.dirty">
+							<p class="help is-danger" *ngIf="form.controls.defendant.getError('minlength')">
+								Mínimo 3 caracteres e máximo de 100
+							</p>
+						</div>
+					</div>
+					<div class="field is-grouped">
+						<div class="control">
+							<button class="button is-success" (click)="save()" [disabled]="!form.valid">
+								<span class="icon is-small">
+									<i class="fas fa-check"></i>
+								</span>
+								<span>Salvar</span>
+							</button>
+						</div>
+						<div class="control">
+							<button class="button is-danger is-light" (click)="close()">
+								<span>Cancelar</span>
+								<span class="icon is-small">
+									<i class="fas fa-times"></i>
+								</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+</div>

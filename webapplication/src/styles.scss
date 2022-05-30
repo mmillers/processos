@@ -1,0 +1,8 @@
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+
+.table tr.is-selected {
+	background-color: #e5e5e5;
+	color: #000;
+}
